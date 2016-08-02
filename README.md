@@ -4,9 +4,8 @@ Tips and Tricks
 
 # Design Pattern
 
-- assets/
+- public/
   - img/
-  - styles/
 - client/
   - home/
     - home.html
@@ -14,15 +13,17 @@ Tips and Tricks
     - homeHelper.js
   - feature2
   - feature3
+  - lib/semantic-ui
 - server/
-  - feature2.js (containers server methods and publications)
-  - feature3.js
+  - methods.js
+  - accessRules.js
+  - publications.js
 - common/
   - collections.js
   - routes.js  
 
 Notes:
-- Client DDP subscriptions can be done in `routes.js` as part of the route configuration or in the helper.js file in the `client` directory.
+- Client DDP subscriptions can be done in `routes.js` as part of the route configuration or in the `helper.js` file in the `client` directory.
 
 # Useful Packages
 Package Name| Installation | Why use it
