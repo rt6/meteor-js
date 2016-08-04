@@ -30,6 +30,7 @@ Package Name| Installation | Why use it
 --- | --- | ---
 Iron Router | meteor add iron:router | App Navigation
 Semantic-UI | meteor add semantic:ui | All components and themes
+MomentJS |  meteor add momentjs:moment | Time format and conversion
 
 
 
