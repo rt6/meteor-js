@@ -36,6 +36,8 @@ Slingshot | meteor add edgee:slingshot | File upload (direct from client to S3 b
 Autoforms | $ meteor add aldeed:autoform | create forms using schema
 cfs | meteor add cfs:standard-packages | File upload to file system, mongo grid fs, etc.
 cfs-ui | meteor add cfs:ui | progress bars, etc..
+Spin | meteor add sacha:spin | Show a spinning wheel while waiting
+Toastr | meteor add chrismbeckett:toastr | Show non-blocking notifications
 
 
 
