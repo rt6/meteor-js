@@ -31,8 +31,9 @@ Package Name| Installation | Why use it
 Iron Router | meteor add iron:router | App Navigation
 Semantic-UI | meteor add semantic:ui | All components and themes
 MomentJS |  meteor add momentjs:moment | Time format and conversion
-Files | meteor add ostrio:files | File Upload
+Meteor Files | meteor add ostrio:files | File Upload
 Slingshot | meteor add edgee:slingshot | File upload (direct from client to S3 bypassing the meteor server
+Autoforms | $ meteor add aldeed:autoform | create forms using schema
 
 
 
