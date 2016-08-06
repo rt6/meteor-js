@@ -30,6 +30,7 @@ Package Name| Installation | Why use it
 --- | --- | ---
 Iron Router | meteor add iron:router | App Navigation
 Semantic-UI | meteor add semantic:ui | All components and themes
+accounts |  meteor add accounts-password | Password support for accounts
 MomentJS |  meteor add momentjs:moment | Time format and conversion
 Meteor Files | meteor add ostrio:files | File upload
 Slingshot | meteor add edgee:slingshot | File upload (direct from client to S3 bypassing the meteor server
@@ -38,6 +39,7 @@ cfs | meteor add cfs:standard-packages | File upload to file system, mongo grid 
 cfs-ui | meteor add cfs:ui | progress bars, etc..
 Spin | meteor add sacha:spin | Show a spinning wheel while waiting
 Toastr | meteor add chrismbeckett:toastr | Show non-blocking notifications
+Reactive Var | meteor add reactive-var | Make your variables reactive with Tracker
 
 
 
