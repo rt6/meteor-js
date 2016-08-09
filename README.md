@@ -79,3 +79,39 @@ db.users.find(
   {"_id":1, "profile":1}
 ).pretty();
 ```
+
+
+### Access the logged in user's details
+In **javascript** helpers:
+```javascript
+Meteor.user().profile._id;
+Meteor.user().profile.firstName; 
+```
+
+in **blaze** views:
+```html
+<table class="ui definition table">
+{{#with currentUser}}
+    <tr>
+        <td>User ID:</td>
+        <td>
+            {{_id}}
+        </td>
+    </tr>
+        {{#with profile}}
+    <tr>
+        <td>First Name: </td>
+        <td>
+        {{firstName}}
+        </td>
+    </tr>
+    <tr>
+        <td>Last Name:</td>
+        <td>
+            {{lastName}}
+        </td>
+    </tr>
+    {{/with}}
+{{/with}}
+</table>
+```
