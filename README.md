@@ -65,10 +65,17 @@ $ meteor
 
 
 ### Query MongoDB using criteria and return selected fields
-In this example, return image objects that match an owner id.  Return the image _id, item name, owner _id, owner name.
+
 ```json
+// In this example, return image objects that match an owner id.  Return the image _id, item name, owner _id, owner name.
 db.cfs.images.filerecord.find(
   {"metadata.owner_id":"abcdefg123"},
   {"metadata.itemName":1, "metadata.owner_firstName":1}
   ).pretty();
+  
+// return the user id and their profile first name, last name and role
+db.users.find(
+  {},
+  {"_id":1, "profile":1}
+).pretty();
 ```
