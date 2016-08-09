@@ -62,3 +62,13 @@ $ meteor
 
 # now you can start using semantic-ui in your code!
 ```
+
+
+### Query MongoDB using criteria and return selected fields
+In this example, return image objects that match an owner id.  Return the image _id, item name, owner _id, owner name.
+```json
+db.cfs.images.filerecord.find(
+  {"metadata.owner_id":"abcdefg123"},
+  {"metadata.itemName":1, "metadata.owner_firstName":1}
+  ).pretty();
+```
