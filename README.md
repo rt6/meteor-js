@@ -82,7 +82,7 @@ db.users.find(
 
 
 ### Access the logged in user's details
-In **javascript** helpers:
+In **client-side javascript** helpers:
 ```javascript
 Meteor.user().profile._id;
 Meteor.user().profile.firstName; 
@@ -114,4 +114,61 @@ in **blaze** views:
     {{/with}}
 {{/with}}
 </table>
+```
+
+in **server-side publications** (you must use this.userId):
+```js
+Meteor.publish("Items", function(){
+  return Items.find({"owner_id": this.userId});
+  return Items.find({"owner_id": this.userId},{itemName:1, description:1});
+}
+```
+
+### Helper functions that are accessible by all templates
+Meteor loads the files in the deepest nested directory **first**.  Sometimes it is hard to predict if your helper functions will be loaded or not, and you do not want to write the same code for helper functions (eg. formatDate) in each Template.
+```js
+Template.registerHelper(
+  'formatDate', function (d){ 
+    var m = moment(d);
+    return m.format("DD MMM YYYY HH:mm");
+  }
+);
+```
+
+### Iron Router
+
+```js
+// configure 404 File Not Found and page loading template
+Router.configure({
+    notFoundTemplate: 'notFound404',
+    loadingTemplate: 'loading'
+});
+
+//redirect user if they are not logged in
+Router.onBeforeAction( function() {
+    if (!Meteor.userId() && !Meteor.loggingIn()){
+        //this.redirect('login');
+        this.redirect('home');
+        toastr.error('Please login in first');
+        this.stop();
+    }else{
+        this.next();
+    }
+}, {except:['login','home']});
+
+
+Router.route('/showItem/:_id', {
+    name: "showItem",
+    template: "showItem",
+    layoutTemplate: "siteLayout",
+    //continue showing loading page until Images subscription is complete
+    waitOn: function() {
+        Meteor.subscribe("Images");
+    },
+    //return an Image object to the template to render
+    data: function(){
+        return Images.findOne({_id: this.params._id});
+    }
+});
+
 ```
