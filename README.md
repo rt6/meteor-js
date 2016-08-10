@@ -120,6 +120,8 @@ in **server-side publications** (you must use this.userId):
 ```js
 Meteor.publish("Items", function(){
   return Items.find({"owner_id": this.userId});
+  
+  // return itemName and description fields only (this will reduce server load, bandwidth and make the page load faster)
   return Items.find({"owner_id": this.userId},{itemName:1, description:1});
 }
 ```
