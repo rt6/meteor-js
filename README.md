@@ -80,6 +80,23 @@ db.users.find(
 ).pretty();
 ```
 
+### Add more values to exisiting MongoDB document
+```json
+# add an item to array called "toys"
+# note push will add the item to the array even if it already exists
+# if you do not want duplicates, use $addToSet
+db.collectionName.update(
+  {"owner_id":"jadkfjkladflkadflkj"}, 
+  {$push: {
+      "Toys": { "name":"bike","location":"garage" } 
+    }
+  }
+)
+
+# to delete elements from array use $pop, $pull, $pullAll
+... example coming soon..
+
+```
 
 ### Access the logged in user's details
 In **client-side javascript** helpers:
