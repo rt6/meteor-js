@@ -101,7 +101,9 @@ db.collectionName.update(
 ### Access the logged in user's details
 In **client-side javascript** helpers:
 ```javascript
-Meteor.user().profile._id;
+// use these methods from accounts package
+Meteor.userId();
+Meteor.user()._id;
 Meteor.user().profile.firstName; 
 ```
 
