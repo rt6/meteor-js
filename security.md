@@ -1,6 +1,6 @@
 # SECURITY
 
-### check user input
+### 1) check user input
 Check that inputs are strings incase they are mongo selectors (ie. contain "{}")
 
 First install the `check` package
