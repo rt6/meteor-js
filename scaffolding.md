@@ -102,5 +102,8 @@ Router.route('/todos/create', {
 Start meteor server (this is equivalent to executing $meteor) in the /app directory
 ```sh
 iron run
+
+# goto /app directory
+meteor mongo
 ```
 
