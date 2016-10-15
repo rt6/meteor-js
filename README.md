@@ -40,6 +40,7 @@ cfs-ui | meteor add cfs:ui | progress bars, etc..
 Spin | meteor add sacha:spin | Show a spinning wheel while waiting
 Toastr | meteor add chrismbeckett:toastr | Show non-blocking notifications
 Reactive Var | meteor add reactive-var | Make your variables reactive with Tracker
+handlebar-helpers | raix:handlebar-helpers | Useful helper functions to use with Blaze 
 
 
 
