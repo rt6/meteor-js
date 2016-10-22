@@ -6,9 +6,26 @@
 
 ### Delete field from document 
 ```js
+// delete from all documents
 db.myCollection.update(
   {},
   { $unset: {'profile:friends':1}},
   false, true
 );
+
+// delete from document matching _id using field selector
+db.myCollection.update(
+  {_id: 1234},
+  { $unset: {'profile:friends':1}},
+  false, true
+);
+
 ```
+
+## find, findOne, fetch
+- `find()` return cursor 
+- `fetch()` return array of documents
+- `findOne()` return one document
+
+operators
+$nin, $ne, $gt, $lt
