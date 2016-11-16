@@ -20,6 +20,12 @@ db.myCollection.update(
   false, true
 );
 
+
+// for document _id abcde123, delete array element if its _id matches "tobedelete_id"
+db.users.update(
+  {_id: "abcde123"},
+  {$pull: {'profile.friends':{_id:"tobedelete_id"}}}
+);
 ```
 
 ## find, findOne, fetch
